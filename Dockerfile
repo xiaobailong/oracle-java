@@ -4,6 +4,9 @@ ENV JAVA_VERSION=8 \
     JAVA_UPDATE=102 \
     JAVA_BUILD=14 \
     JAVA_HOME="/usr/lib/jvm/default-jvm"
+    
+RUN mkdir /data
+WORKDIR /data
 
 COPY ./sources.list /etc/apt/sources.list
 RUN apt-get update -y && apt-get install -y wget ca-certificates && \
