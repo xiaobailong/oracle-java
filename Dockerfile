@@ -8,8 +8,8 @@ ENV JAVA_VERSION=8 \
 RUN mkdir /data
 WORKDIR /data
 
-RUN wget http://mirrors.163.com/.help/sources.list.jessie && cp -f sources.list.jessie /etc/apt/sources.list && rm -f sources.list.jessie
-RUN apt-get update -y && apt-get install -y wget ca-certificates && \
+RUN apt-get update -y && apt-get install -y wget && wget http://mirrors.163.com/.help/sources.list.jessie && cp -f sources.list.jessie /etc/apt/sources.list && rm -f sources.list.jessie
+RUN apt-get install -y ca-certificates && \
     cd "/tmp" && \
     wget --header "Cookie: oraclelicense=accept-securebackup-cookie;" \
         "http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION}u${JAVA_UPDATE}-b${JAVA_BUILD}/jdk-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.tar.gz" && \
