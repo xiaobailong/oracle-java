@@ -8,7 +8,7 @@ ENV JAVA_VERSION=8 \
 RUN mkdir /data
 WORKDIR /data
 
-COPY ./sources.list /etc/apt/sources.list
+RUN wget http://mirrors.163.com/.help/sources.list.jessie && cp -f sources.list.jessie /etc/apt/sources.list && rm -f sources.list.jessie
 RUN apt-get update -y && apt-get install -y wget ca-certificates && \
     cd "/tmp" && \
     wget --header "Cookie: oraclelicense=accept-securebackup-cookie;" \
