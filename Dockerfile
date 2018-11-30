@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 ENV JAVA_VERSION=8 \
-    JAVA_UPDATE=102 \
+    JAVA_UPDATE=191 \
     JAVA_BUILD=14 \
     JAVA_HOME="/usr/lib/jvm/default-jvm"
     
@@ -12,7 +12,7 @@ RUN apt-get update -y && apt-get install -y wget && wget http://mirrors.163.com/
 RUN apt-get install -y ca-certificates && \
     cd "/tmp" && \
     wget --header "Cookie: oraclelicense=accept-securebackup-cookie;" \
-        "http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION}u${JAVA_UPDATE}-b${JAVA_BUILD}/jdk-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.tar.gz" && \
+        "https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz" && \
     tar -xzf "jdk-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.tar.gz" && \
     mkdir -p "/usr/lib/jvm" && \
     mv "/tmp/jdk1.${JAVA_VERSION}.0_${JAVA_UPDATE}" "/usr/lib/jvm/java-${JAVA_VERSION}-oracle" && \
