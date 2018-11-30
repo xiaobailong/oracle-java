@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
 ENV JAVA_VERSION=8 \
     JAVA_UPDATE=191 \
