@@ -1,9 +1,9 @@
 FROM centos:7
 
-ENV JAVA_VERSION=8 \
-    JAVA_UPDATE=102 \
-    JAVA_BUILD=14 \
-    JAVA_HOME="/usr/lib/jvm/default-jvm"
+ENV JAVA_VERSION 8
+ENV JAVA_UPDATE 102
+ENV JAVA_BUILD 14
+ENV JAVA_HOME /usr/lib/jvm/default-jvm
     
 RUN mkdir /data
 WORKDIR /data
