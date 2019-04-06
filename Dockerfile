@@ -4,6 +4,7 @@ ENV JAVA_VERSION 8
 ENV JAVA_UPDATE 102
 ENV JAVA_BUILD 14
 ENV JAVA_HOME /usr/lib/jvm/default-jvm
+ENV PATH $PATH:$JAVA_HOME/bin
     
 RUN mkdir /data
 WORKDIR /data
