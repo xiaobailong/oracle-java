@@ -13,8 +13,8 @@ RUN yum install -y wget && wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirr
 
 RUN yum install -y ca-certificates && \
     cd "/tmp" && \
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie;" \
-    "https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz?AuthParam=1554531355_34593496e23501d6dcefd633352923b9" && \
+    wget --header "Cookie: oraclelicense=accept-securebackup-cookie;" \
+        "http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION}u${JAVA_UPDATE}-b${JAVA_BUILD}/jdk-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.tar.gz" && \
     tar -xzf "jdk-8u201-linux-x64.tar.gz" && \
     mkdir -p "/usr/lib/jvm" && \
     mv "/tmp/jdk-8u201-linux-x64" "/usr/lib/jvm/java-${JAVA_VERSION}-oracle" && \
